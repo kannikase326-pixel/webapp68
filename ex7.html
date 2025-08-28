@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fullscreen Mode Styling</title>
+  <title>เว็บดูหนัง</title>
   <link rel="stylesheet" href="ex7.css">
 </head>
 <body>
   <main class="page">
-    <h1>Fullscreen Styling Example</h1>
-    <p>คลิกปุ่มด้านล่างเพื่อเข้าสู่ fullscreen ของกล่องสีฟ้า</p>
+    <h1>ดูหนัง</h1>
+    <p>คลิกปุ่มเพื่อดูแบบเต็มจอ</p>
 
     <div class="fullscreen-box" id="fs-box">
-      <h2>เนื้อหาในกล่อง</h2>
-      <p>เมื่อกล่องนี้อยู่ใน fullscreen จะเปลี่ยนสีพื้นหลัง ขนาดฟอนต์ และการจัดวาง</p>
+      <video src="movie.mp4" controls style="width:100%; border-radius:12px;"></video>
       <button type="button" id="exitBtn">ออกจาก Fullscreen</button>
     </div>
 
