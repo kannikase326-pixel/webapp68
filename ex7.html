@@ -1,41 +1,38 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>เว็บดูหนัง</title>
-  <link rel="stylesheet" href="ex7.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fullscreen Example</title>
+<!-- ลิงก์ไปที่ไฟล์ CSS -->
+<link rel="stylesheet" href="ex7.css">
 </head>
 <body>
-  <main class="page">
-    <h1>ดูหนัง</h1>
-    <p>คลิกปุ่มเพื่อดูแบบเต็มจอ</p>
-
-    <div class="fullscreen-box" id="fs-box">
-      <video src="movie.mp4" controls style="width:100%; border-radius:12px;"></video>
-      <button type="button" id="exitBtn">ออกจากดูแบบเต็มจอ</button>
-    </div>
-
-    <button type="button" id="enterBtn">เข้าสู่แบบเต็มจอ</button>
-  </main>
-
-  <script>
-    const box = document.getElementById('fs-box');
-    const enterBtn = document.getElementById('enterBtn');
-    const exitBtn = document.getElementById('exitBtn');
-
-    enterBtn.addEventListener('click', () => {
-      if (box.requestFullscreen) {
-        box.requestFullscreen();
-      }
-    });
-
-    exitBtn.addEventListener('click', () => {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      }
-    });
-  </script>
+<p><i>Click the button below to enter the element into fullscreen mode.</i></p>
+<div id="myBox"></div>
+<br>
+<button onclick="openFullscreen()">Go Fullscreen</button>
+<button onclick="closeFullscreen()">Exit Fullscreen</button>
+<script>
+   var box = document.getElementById("myBox");
+   function openFullscreen() {
+     if (box.requestFullscreen) {
+       box.requestFullscreen();
+     } else if (box.webkitRequestFullscreen) { /* Safari */
+       box.webkitRequestFullscreen();
+     } else if (box.msRequestFullscreen) { /* IE11 */
+       box.msRequestFullscreen();
+     }
+   }
+   function closeFullscreen() {
+     if (document.exitFullscreen) {
+       document.exitFullscreen();
+     } else if (document.webkitExitFullscreen) { /* Safari */
+       document.webkitExitFullscreen();
+     } else if (document.msExitFullscreen) { /* IE11 */
+       document.msExitFullscreen();
+     }
+   }
+</script>
 </body>
 </html>
-
