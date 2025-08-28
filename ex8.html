@@ -3,47 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Popout Menu – Hover/Focus</title>
+  <title>Movie Streaming</title>
   <link rel="stylesheet" href="ex8.css">
 </head>
 <body>
   <header class="site-header">
-    <h1>Popout Menu (CSS only)</h1>
+    <h1>เว็บดูหนังออนไลน์</h1>
     <nav class="menu" aria-label="Main Navigation">
       <ul class="menu__list" role="menubar">
+        <!-- โฮม -->
         <li class="menu__item" role="none">
           <a role="menuitem" href="#home" class="menu__link is-active">Home</a>
         </li>
+
+        <!-- เมนูหนัง -->
         <li class="menu__item has-popout" role="none">
-          <a role="menuitem" href="#products" class="menu__link menu__trigger" aria-haspopup="true">Products ▾</a>
+          <a role="menuitem" href="#movies" class="menu__link menu__trigger" aria-haspopup="true">
+            Movies ▾
+          </a>
           <!-- Popout dropdown -->
-          <ul class="popout" role="menu" aria-label="Products">
-            <li role="none"><a role="menuitem" href="#phones" class="popout__link">Phones</a></li>
-            <li role="none" class="has-nested">
-              <a role="menuitem" href="#laptops" class="popout__link popout__trigger">Laptops ▸</a>
-              <!-- Nested flyout (to the right) -->
-              <ul class="popout popout--right" role="menu" aria-label="Laptops">
-                <li role="none"><a role="menuitem" href="#ultrabook" class="popout__link">Ultrabook</a></li>
-                <li role="none"><a role="menuitem" href="#gaming" class="popout__link">Gaming</a></li>
-                <li role="none"><a role="menuitem" href="#2in1" class="popout__link">2‑in‑1</a></li>
-              </ul>
-            </li>
-            <li role="none"><a role="menuitem" href="#tablets" class="popout__link">Tablets</a></li>
-            <li role="none"><a role="menuitem" href="#accessories" class="popout__link">Accessories</a></li>
+          <ul class="popout" role="menu" aria-label="Movies">
+            <li role="none"><a role="menuitem" href="#action" class="popout__link">แอคชั่น</a></li>
+            <li role="none"><a role="menuitem" href="#romance" class="popout__link">โรแมนติก</a></li>
+            <li role="none"><a role="menuitem" href="#comedy" class="popout__link">ตลก</a></li>
+            <li role="none"><a role="menuitem" href="#horror" class="popout__link">สยองขวัญ</a></li>
+            <li role="none"><a role="menuitem" href="#scifi" class="popout__link">ไซไฟ</a></li>
+            <li role="none"><a role="menuitem" href="#animation" class="popout__link">แอนิเมชัน</a></li>
           </ul>
         </li>
+
+        <!-- ข้อมูลส่วนตัว -->
         <li class="menu__item" role="none">
-          <a role="menuitem" href="#about" class="menu__link">About</a>
+          <a role="menuitem" href="#profile" class="menu__link">Profile</a>
         </li>
+
+        <!-- การตั้งค่า -->
         <li class="menu__item" role="none">
-          <a role="menuitem" href="#contact" class="menu__link">Contact</a>
+          <a role="menuitem" href="#settings" class="menu__link">Settings</a>
         </li>
       </ul>
     </nav>
   </header>
 
   <main class="content">
-    <p>โฮเวอร์เมาส์บน “Products” หรือกด <kbd>Tab</kbd> เพื่อโฟกัสลิงก์ เมนูย่อยจะเปิดอัตโนมัติด้วย <code>:hover</code> และ <code>:focus-within</code>.</p>
+    <h2>🎬 ยินดีต้อนรับสู่เว็บดูหนัง</h2>
+    <p>เลือกเมนู <strong>Movies</strong> เพื่อดูหนังตามแนวที่คุณชอบ เช่น แอคชั่น โรแมนติก หรือสยองขวัญ</p>
   </main>
 </body>
 </html>
