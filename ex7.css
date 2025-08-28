@@ -1,11 +1,12 @@
 /* กล่องหลัก */
 #myBox {
- width: 300px;
- height: 100px;
+ width: 400px;
+ height: 150px;
  background: orange;
  margin-top: 10px;
+ overflow: auto; /* ทำให้เลื่อนขึ้นลงได้ */
 }
-/* เมื่อกล่องเข้า fullscreen */
+/* เมื่ออยู่ใน fullscreen */
 #myBox:fullscreen {
  background: red;
  width: 100%;
