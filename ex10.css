@@ -1,0 +1,70 @@
+:root{
+  /* ปรับตัวแปรได้ตามต้องการ */
+  --bg-color: #f8fafc;         /* พื้นหลังหลัก */
+  --dot-color: #bfef3a;        /* สีจุด */
+  --dot-size: 12px;            /* ขนาดจุด (รัศมี) */
+  --dot-gap: 36px;             /* ระยะห่างระหว่างจุด (ระยะครบหนึ่งหน่วย) */
+  --overlay: rgba(255,255,255,0.7); /* ออบเจ็กต์ทึบบนการ์ดถ้าต้องการ */
+}
+
+/* เต็มหน้า: polka dot เป็น background-layer แรก */
+body{
+  margin:0;
+  min-height:100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#0f172a;
+  background:
+    /* dot pattern layer */
+    repeating-radial-gradient(
+      circle at 0 0,
+      var(--dot-color) 0,
+      var(--dot-color) calc(var(--dot-size)),
+      transparent calc(var(--dot-size)),
+      transparent calc(var(--dot-gap))
+    ),
+    var(--bg-color); /* base color */
+  background-size: var(--dot-gap) var(--dot-gap); /* controls tiling */
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Simple demo layout so pattern is visible */
+.demo{
+  max-width:980px;
+  margin:48px auto;
+  padding:24px;
+}
+
+h1{ margin:0 0 8px; font-size:24px }
+p{ margin:0 0 18px; color:#475569 }
+
+/* Card to sit on top of pattern (to keep content readable) */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+  border-radius:12px;
+  padding:20px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  border: 1px solid rgba(15,23,42,0.06);
+  max-width:540px;
+}
+
+/* Button styling */
+button{
+  margin-top:14px;
+  padding:8px 12px;
+  background:#e5c225;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width:520px){
+  :root{
+    --dot-size:10px;
+    --dot-gap:28px;
+  }
+  .demo{ padding:16px; margin:24px auto; }
+  .card{ padding:16px; }
+}

@@ -1,0 +1,58 @@
+:root {
+  --bg: #f3f4f6;
+  --box-bg: #bfdbfe;
+  --box-text: #1e3a8a;
+  --box-bg-full: #1e3a8a;
+  --box-text-full: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: #111;
+}
+
+.page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.fullscreen-box {
+  background: var(--box-bg);
+  color: var(--box-text);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Style when in fullscreen */
+.fullscreen-box:fullscreen {
+  background: var(--box-bg-full);
+  color: var(--box-text-full);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+button {
+  padding: 8px 14px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2563eb;
+}

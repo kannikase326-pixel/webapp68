@@ -1,0 +1,89 @@
+:root {
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --border: #d1d5db;
+  --border-focus: #3b82f6;
+  --shadow: rgba(59, 130, 246, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: #111;
+}
+
+.page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+p {
+  color: #6b7280;
+}
+
+/* Form base style */
+.my-form {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+/* Change appearance if any child inside is focused */
+.my-form:focus-within {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 4px var(--shadow);
+}
+
+/* Label and inputs */
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  margin-top: 4px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--border-focus);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--shadow);
+}
+
+/* Submit button */
+button {
+  padding: 10px 16px;
+  background: var(--border-focus);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2563eb;
+}

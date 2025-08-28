@@ -1,0 +1,45 @@
+/* กล่องรวม */
+.container {
+  margin: 25px;
+  border: 2px solid;
+  padding: 25px;
+  background-color: #9bdf9d;
+}
+
+/* ซ่อนสไตล์เริ่มต้นของ checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+/* ไอคอนเครื่องหมายถูก */
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  top: 2px;
+  left: 6px;
+  transform: scale(0) rotate(45deg);
+  transition: transform 0.2s ease-out;
+}
+
+/* เมื่อถูกติ๊ก */
+input[type="checkbox"]:checked {
+  background-color: #00c448;
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+input[type="checkbox"]:checked::after {
+  transform: scale(1) rotate(45deg);
+}

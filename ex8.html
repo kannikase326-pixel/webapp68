@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Popout Menu – Hover/Focus</title>
+  <link rel="stylesheet" href="ex8.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Popout Menu (CSS only)</h1>
+    <nav class="menu" aria-label="Main Navigation">
+      <ul class="menu__list" role="menubar">
+        <li class="menu__item" role="none">
+          <a role="menuitem" href="#home" class="menu__link is-active">Home</a>
+        </li>
+        <li class="menu__item has-popout" role="none">
+          <a role="menuitem" href="#products" class="menu__link menu__trigger" aria-haspopup="true">Products ▾</a>
+          <!-- Popout dropdown -->
+          <ul class="popout" role="menu" aria-label="Products">
+            <li role="none"><a role="menuitem" href="#phones" class="popout__link">Phones</a></li>
+            <li role="none" class="has-nested">
+              <a role="menuitem" href="#laptops" class="popout__link popout__trigger">Laptops ▸</a>
+              <!-- Nested flyout (to the right) -->
+              <ul class="popout popout--right" role="menu" aria-label="Laptops">
+                <li role="none"><a role="menuitem" href="#ultrabook" class="popout__link">Ultrabook</a></li>
+                <li role="none"><a role="menuitem" href="#gaming" class="popout__link">Gaming</a></li>
+                <li role="none"><a role="menuitem" href="#2in1" class="popout__link">2‑in‑1</a></li>
+              </ul>
+            </li>
+            <li role="none"><a role="menuitem" href="#tablets" class="popout__link">Tablets</a></li>
+            <li role="none"><a role="menuitem" href="#accessories" class="popout__link">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="menu__item" role="none">
+          <a role="menuitem" href="#about" class="menu__link">About</a>
+        </li>
+        <li class="menu__item" role="none">
+          <a role="menuitem" href="#contact" class="menu__link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <p>โฮเวอร์เมาส์บน “Products” หรือกด <kbd>Tab</kbd> เพื่อโฟกัสลิงก์ เมนูย่อยจะเปิดอัตโนมัติด้วย <code>:hover</code> และ <code>:focus-within</code>.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Basic page */
+:root{
+  --bg:#f3f4f6;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --gap:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#111}
+.page{max-width:920px;margin:28px auto;padding:16px}
+
+/* Headings */
+h1{margin:0 0 8px;font-size:20px}
+.lead{margin:0 0 20px;color:var(--muted)}
+
+/* SNAP CONTAINER - common styles */
+.snap-container{
+  background:linear-gradient(180deg, #fff, #fbfbff);
+  border:1px solid #e6e9ef;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(16,24,40,.06);
+  padding:12px;
+  gap:var(--gap);
+  scroll-behavior:smooth;
+  /* make it keyboard focusable */
+  outline: none;
+}
+
+/* Vertical container (default) */
+.snap-container.vertical{
+  height:420px;               /* container height (scrollable area) */
+  overflow-y:auto;            /* vertical scrolling */
+  scroll-snap-type: y mandatory; /* important: snap on Y axis; mandatory ensures snap happens */
+  scroll-padding: 12px;       /* optional: spacing from edges when snapping */
+  display:flex;
+  flex-direction:column;
+}
+
+/* Horizontal container */
+.snap-container.horizontal{
+  height:180px;
+  overflow-x:auto;            /* horizontal scrolling */
+  scroll-snap-type: x mandatory; /* snap on X axis */
+  display:flex;
+  align-items:center;
+  padding:12px;
+}
+
+/* SNAP ITEMS */
+.snap-item{
+  background:var(--card);
+  border-radius:10px;
+  border:1px solid #eef2ff;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(16,24,40,.04);
+  scroll-snap-align: start;  /* item snaps to the container's start edge */
+  flex: 0 0 auto;            /* avoid shrinking in horizontal mode */
+}
+
+/* vertical items: make each item tall so snapping is obvious */
+.snap-container.vertical .snap-item{
+  min-height: 320px;
+}
+
+/* horizontal items: wide cards */
+.snap-container.horizontal .snap-item.wide{
+  min-width: 320px;
+  height: 140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+/* small UI niceties */
+.snap-container:focus{
+  box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+.snap-item h2{margin:0 0 8px}
+.snap-item p{margin:0;color:var(--muted)}
+
+/* Responsive: reduce heights on small screens */
+@media (max-width:560px){
+  .snap-container.vertical{ height: 280px }
+  .snap-container.vertical .snap-item{ min-height:220px }
+  .snap-container.horizontal .snap-item.wide{ min-width:240px }
+}

@@ -1,0 +1,89 @@
+/* โครงหลัก */
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 20px;
+  line-height: 1.4;
+  color: #f8bc15;
+  background: #038658;
+}
+
+/* กล่องภาพ */
+.card{
+  max-width: 800px;
+  margin: 16px 0;
+  position: relative; /* ให้ overlay วางตำแหน่งแบบ absolute ภายใน */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* รูปจริง ให้เต็มความกว้าง และตอบสนอง */
+.card img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ชั้น overlay พื้นฐาน (ครอบทั้งภาพ) */
+.card .overlay{
+  position: absolute;
+  inset: 0;               /* top:0; right:0; bottom:0; left:0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* แนวตั้งกึ่งกลาง */
+  align-items: center;     /* แนวนอนกึ่งกลาง */
+  text-align: center;
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  /* พื้นหลังโปร่งช่วยให้ข้อความอ่านง่าย */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  transition: background 0.25s ease, transform 0.25s ease;
+  pointer-events: none; /* ไม่ขัดการคลิกบนรูป ถ้าไม่ต้องการให้คลิกได้ */
+}
+
+/* ข้อความภายใน */
+.card .overlay h2,
+.card .overlay h3{
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ตัวอย่าง: overlay ขนาดเล็ก (ไม่แผ่เต็มภาพ) */
+.card .overlay.small{
+  width: auto;
+  max-width: 60%;
+  left: 16px;
+  right: auto;
+  bottom: 16px;
+  top: auto;
+  inset: auto 16px 16px 16px; /* bottom-left position */
+  border-radius: 6px;
+  background: rgba(0,0,0,0.5);
+  align-items: flex-start;
+  text-align: left;
+  pointer-events: none;
+}
+
+/* วางตำแหน่งมุมล่างซ้ายโดยเฉพาะ */
+.bottom-left-overlay .overlay{
+  position: absolute;
+  inset: auto 16px 16px 16px; /* top right bottom left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* เอฟเฟกต์เมื่อเลื่อนเมาส์ (ไม่จำเป็น แต่สวย) */
+.card:hover .overlay{
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  transform: translateY(-4px);
+}
+
+/* การตอบสนองบนจอเล็ก */
+@media (max-width:600px){
+  .card .overlay.small{ max-width: 90%; inset: auto 12px 12px 12px; }
+  .card .overlay h2{ font-size: 1.1rem; }
+  .card .overlay p{ font-size: 0.95rem; }
+}
