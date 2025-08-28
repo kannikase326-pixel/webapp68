@@ -1,24 +1,20 @@
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 70px;
-}
 
 nav {
-    background-color: #f8f9fa;   /* พื้นหลังสีเทาอ่อน */
-    border: 2px solid #333;      /* เส้นกรอบสีดำ */
-    padding: 10px;               /* เว้นระยะด้านใน */
-    text-align: center;          /* จัดลิงก์ให้อยู่กึ่งกลาง */
+    background-color: #f8f9fa;   
+    border: 2px solid #333;     
+    padding: 10px;               
+    text-align: center;         
 }
 
 nav a {
-    margin: 0 15px;              /* ระยะห่างระหว่างลิงก์ */
-    text-decoration: none;       /* เอาเส้นใต้ลิงก์ออก */
-    color: #333;                 /* สีตัวอักษร */
-    font-weight: bold;           /* ตัวหนา */
+    margin: 0 15px;             
+    text-decoration: none;      
+    color: #333;                
+    font-weight: bold;          
 }
 
 nav a:hover {
-    color: #f6f088;              /* เวลาเอาเมาส์ชี้ ลิงก์เปลี่ยนเป็นสีน้ำเงิน */
+    color: #f6f088;             
 }
 section {
   display: flex;
@@ -33,7 +29,8 @@ section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 section img {
-  max-width: 200px;   /* ความกว้างสูงสุด */
-  height: auto;       /* ให้ปรับอัตราส่วนอัตโนมัติ */
-  border-radius: 8px; /* มุมโค้งเล็กน้อย */
+  max-width: 200px;   
+  height: auto;       
+  border-radius: 8px; 
 }
+
