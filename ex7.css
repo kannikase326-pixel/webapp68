@@ -1,18 +1,17 @@
-/* กล่องหลัก */
+/* กล่องสีส้ม */
 #myBox {
  width: 400px;
- height: 150px;
+ height: 600px;     /* ทำให้สูงกว่า viewport */
  background: orange;
  margin-top: 10px;
- overflow: auto; /* ทำให้เลื่อนขึ้นลงได้ */
+ overflow: auto;     /* แสดง scrollbar */
 }
-/* เมื่ออยู่ใน fullscreen */
+/* เมื่อ fullscreen */
 #myBox:fullscreen {
  background: red;
  width: 100%;
  height: 100%;
 }
-/* รองรับ browser อื่น */
 #myBox:-webkit-full-screen {
  background: red;
  width: 100%;
