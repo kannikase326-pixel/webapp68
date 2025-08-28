@@ -1,0 +1,39 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+nav {
+    background-color: #f8f9fa;   /* พื้นหลังสีเทาอ่อน */
+    border: 2px solid #333;      /* เส้นกรอบสีดำ */
+    padding: 10px;               /* เว้นระยะด้านใน */
+    text-align: center;          /* จัดลิงก์ให้อยู่กึ่งกลาง */
+}
+
+nav a {
+    margin: 0 15px;              /* ระยะห่างระหว่างลิงก์ */
+    text-decoration: none;       /* เอาเส้นใต้ลิงก์ออก */
+    color: #333;                 /* สีตัวอักษร */
+    font-weight: bold;           /* ตัวหนา */
+}
+
+nav a:hover {
+    color: #f6f088;              /* เวลาเอาเมาส์ชี้ ลิงก์เปลี่ยนเป็นสีน้ำเงิน */
+}
+section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #003366;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+section img {
+  max-width: 200px;   /* ความกว้างสูงสุด */
+  height: auto;       /* ให้ปรับอัตราส่วนอัตโนมัติ */
+  border-radius: 8px; /* มุมโค้งเล็กน้อย */
+}
