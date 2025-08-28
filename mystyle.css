@@ -1,36 +1,102 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
 
+body {
+  background-color: SteelBlue;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding-top: 70px;
+  line-height: 1.6;
+}
+
+/* Navbar */
 nav {
-    background-color: #f8f9fa;   
-    border: 2px solid #333;     
-    padding: 10px;               
-    text-align: center;         
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #003366;   /* สีน้ำเงินกรมท่า */
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
 }
 
 nav a {
-    margin: 0 15px;             
-    text-decoration: none;      
-    color: #333;                
-    font-weight: bold;          
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  display: inline-block;
 }
 
 nav a:hover {
-    color: #f6f088;             
-}
-section {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  color: #003366;
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 1200px;
-  margin: 20px auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-section img {
-  max-width: 200px;   
-  height: auto;       
-  border-radius: 8px; 
+  background-color: #00509e;   /* น้ำเงินอ่อนเมื่อ hover */
+  border-radius: 6px;
 }
 
+/* Section */
+section {
+  background-color: white;
+  color: #003366;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+section img {
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+section h2 {
+  font-size: 32px;
+  color: #003366;
+  margin: 0 0 10px 0;
+}
+
+section h3 {
+  font-size: 24px;
+  color: #444;
+  margin: 0 0 8px 0;
+}
+
+section h4 {
+  font-size: 18px;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+section .text-box {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
